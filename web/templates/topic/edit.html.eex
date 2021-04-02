@@ -1,0 +1,10 @@
+<h5>Edit Topic</h5>
+
+<%= form_for @changeset, topic_path(@conn, :update, @topic.id), fn form -> %>
+    <div class="form-group">
+        <%= text_input form, :title, placeholder: "Title", class: "form-control" %>
+        <%= error_tag form, :title %>
+    </div>
+
+    <%= submit "Update Topic", class: "btn btn-primary" %>
+<% end %>

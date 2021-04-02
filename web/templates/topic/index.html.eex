@@ -1,0 +1,25 @@
+<h5>Topics</h5>
+
+<ul class="collection">
+    <%= for %{ title: title, id: id, user_id: user_id } <- @topics do %>
+        <li class="collection-item">
+            <%= link title, to: topic_path(@conn, :show, id) %>
+            <%= if @conn.assigns.user.id == user_id do %>
+                <div class="right">
+                    <%= link to: topic_path(@conn, :edit, id) do %>
+                        <i class="material-icons">edit</i>
+                    <% end %>
+                    <%= link to: topic_path(@conn, :delete, id), method: :delete do %>
+                        <i class="material-icons">delete</i>
+                    <% end %>
+                </div>
+            <% end %>
+        </li>
+    <% end %>
+</ul>
+
+<div class="fixed-action-btn">
+    <%= link to: topic_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light red" do %>
+        <i class="material-icons">add</i>
+    <% end %>
+</div>

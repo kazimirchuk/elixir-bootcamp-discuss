@@ -1,0 +1,10 @@
+/* This file is for your main application css. */
+
+.help-block {
+    color: darkred;
+    text-transform: capitalize;
+}
+
+.alert {
+    margin-top: 1rem;
+}
